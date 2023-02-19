@@ -26,19 +26,18 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
 
     public static final class Builder {
         private RestaurantId restaurantId;
-        private final List<Product> products;
+        private List<Product> products;
         private boolean active;
 
-        private Builder(List<Product> products) {
-            this.products = products;
+        private Builder() {
         }
-
-        public static Builder builder(List<Product> products) {
-            return new Builder(products);
-        }
-
         public Builder restaurantId(RestaurantId val) {
             restaurantId = val;
+            return this;
+        }
+
+        public Builder products (List<Product> val){
+            this.products = products;
             return this;
         }
 
@@ -50,5 +49,8 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
         public Restaurant build() {
             return new Restaurant(this);
         }
+    }
+    public static Builder builder() {
+        return new Builder();
     }
 }
