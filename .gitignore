@@ -1,0 +1,5 @@
+/order-service/order-domain/order-application-service/target/
+/order-service/order-domain/order-domain-core/target/
+/common/common-domain/target/
+
+infrastructure/docker-compose/volumes
